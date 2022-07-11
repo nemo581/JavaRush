@@ -21,7 +21,7 @@ public class Cache<K, V> {
     public boolean put(V obj) throws IllegalAccessException {
         //TODO add your code here
         try {
-            Method method = obj.getClass().getDeclaredMethod("getKey", null);
+            Method method = obj.getClass().getDeclaredMethod("getKey");
             method.setAccessible(true);
             K key = (K) method.invoke(obj);
             cache.put(key, obj);
