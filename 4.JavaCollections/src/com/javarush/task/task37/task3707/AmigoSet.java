@@ -1,11 +1,32 @@
 package com.javarush.task.task37.task3707;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.*;
 
 public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneable, Set<E> {
     private static final Object PRESENT = new Object();
     private transient HashMap<E, Object> map;
+
+    private void writeObject (ObjectOutputStream stream) throws IOException {
+        stream.defaultWriteObject();
+        stream.writeObject(HashMapReflectionHelper.callHiddenMethod(this.map, "capacity"));
+        stream.writeObject(HashMapReflectionHelper.callHiddenMethod(this.map, "loadFactor"));
+        stream.writeObject(this.map.size());
+        for (E e: this.map.keySet()) {
+            stream.writeObject(e);
+        }
+    }
+    private void readObject (ObjectInputStream stream) throws IOException, ClassNotFoundException {
+        stream.defaultReadObject();
+        int capacity = (int) stream.readObject();
+        float loadFactor = (float) stream.readObject();
+        int size = (int) stream.readObject();
+        map = new HashMap<>(capacity, loadFactor);
+        for (int i =0; i<size; i++) {
+            E e = (E) stream.readObject();
+            map.put(e, PRESENT);
+        }
+    }
 
     @Override
     public Object clone() throws InternalError {
@@ -18,7 +39,6 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
         }
         return amigoSet;
     }
-
 
     @Override
     public void clear() {
