@@ -11,6 +11,7 @@ public class HashMapReflectionHelper {
             method.setAccessible(true);
             return (T) method.invoke(map);
         } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException ignored) {
+            System.out.println("error");
         }
         return null;
     }
