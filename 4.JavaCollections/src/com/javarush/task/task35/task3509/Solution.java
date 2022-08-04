@@ -11,18 +11,34 @@ public class Solution {
     public static void main(String[] args) {
     }
 
-    public static ArrayList newArrayList(Object... elements) {
+    public static <T> ArrayList <T> newArrayList (T... elements) {
         //напишите тут ваш код
-        return null
+        ArrayList<T> arrayList = new ArrayList<T>(elements.length);
+        for (T o : elements) {
+            arrayList.add((T)o);
+        }
+        return arrayList;
     }
 
-    public static HashSet newHashSet(Object... elements) {
+    public static <T> HashSet <T> newHashSet(T... elements) {
         //напишите тут ваш код
-        return null
+        HashSet<T> hashSet = new HashSet<>(elements.length);
+        for (T o : elements) {
+            hashSet.add(o);
+        }
+        return hashSet;
     }
 
-    public static HashMap newHashMap(List keys, List values) {
+    public static <K, V> HashMap <K, V> newHashMap(List<? extends K> keys, List<? extends V> values) {
         //напишите тут ваш код
-        return null;
+        if (keys.size() != values.size()) {
+            throw new IllegalArgumentException();
+        } else {
+            HashMap<K, V> hashMap = new HashMap<>();
+            for (int i = 0; i < keys.size(); i++) {
+                hashMap.put(keys.get(i), values.get(i));
+            }
+            return hashMap;
+        }
     }
 }
