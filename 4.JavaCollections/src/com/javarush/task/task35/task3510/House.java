@@ -9,7 +9,6 @@ import java.util.List;
 */
 
 public class House {
-
     private List residents = new ArrayList();
 
     public void enter(Object resident) {
