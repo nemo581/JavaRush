@@ -36,8 +36,8 @@ public class Solution {
                                 for (Constructor<?> c : clazz.getConstructors()) {
                                     if (c.getParameterCount() == 0) {
                                         try {
-                                            Animal o = (Animal) clazz.newInstance();
-                                            result.add(o);
+                                            Animal newAnimal = (Animal) clazz.newInstance();
+                                            result.add(newAnimal);
                                         } catch (InstantiationException | IllegalAccessException e) {
                                             throw new RuntimeException(e);
                                         }
