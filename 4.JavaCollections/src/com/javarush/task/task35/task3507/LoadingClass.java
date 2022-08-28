@@ -1,10 +1,9 @@
 package com.javarush.task.task35.task3507;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class LoadingClass extends ClassLoader {
     @Override
@@ -20,7 +19,7 @@ public class LoadingClass extends ClassLoader {
 
     private byte[] loadClassFromFile(String filename) throws IOException {
 //        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filename);
-        InputStream inputStream = Files.newInputStream(Paths.get(filename));
+        InputStream inputStream = new FileInputStream(filename);
         byte[] buffer;
         ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
         int nextValue = 0;
