@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /* 
-Рекурсия для мат. выражения_
+Рекурсия для мат. выражения
 */
 
 public class Solution {
