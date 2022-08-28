@@ -19,9 +19,7 @@ public class Solution {
     }
 
     public void recurse(final String expression, int countOperation) {
-
         //implement
-
     }
 
     public Solution() {
