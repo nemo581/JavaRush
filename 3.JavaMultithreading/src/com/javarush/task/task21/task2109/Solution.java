@@ -21,6 +21,11 @@ public class Solution {
         public int getJ() {
             return j;
         }
+
+        @Override
+        public Object clone() throws CloneNotSupportedException {
+            return super.clone();
+        }
     }
 
     public static class B extends A {
@@ -34,15 +39,24 @@ public class Solution {
         public String getName() {
             return name;
         }
+
+        @Override
+        public Object clone() throws CloneNotSupportedException {
+            throw new CloneNotSupportedException();
+        }
     }
 
     public static class C extends B {
         public C(int i, int j, String name) {
             super(i, j, name);
         }
+
+        @Override
+        public Object clone() {
+            return new C(super.getI(), super.getJ(), super.getName());
+        }
     }
 
     public static void main(String[] args) {
-
     }
 }
