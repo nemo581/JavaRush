@@ -1,7 +1,7 @@
 package com.javarush.task.task34.task3411;
 
 /* 
-Ханойские башни_
+Ханойские башни
 */
 
 public class Solution {
