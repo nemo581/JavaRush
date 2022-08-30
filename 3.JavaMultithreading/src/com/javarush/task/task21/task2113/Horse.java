@@ -1,7 +1,5 @@
 package com.javarush.task.task21.task2113;
 
-import java.text.DecimalFormat;
-
 public class Horse {
     private String name;
     private double speed;
@@ -18,8 +16,23 @@ public class Horse {
     }
 
     public void print() {
-        int count = Integer.parseInt(String.valueOf(distance).replaceAll("\\..*", ""));
-        System.out.println(String.format("%" + count + "s", ' ').replaceAll("\\ ", "\\" + ".") + getName());
+        StringBuilder track = new StringBuilder();
+        for (int i = 0; i < (int) distance; i++) {
+            track.append(".");
+        }
+        System.out.println(track + getName());
+
+//        ##########################################
+//        ##########################################
+//        ###  Don't Working With COUNT == 0!!!  ###
+//        ##########################################
+//        ##########################################
+//        int count = Integer.parseInt(String.valueOf(distance).replaceAll("\\..*", ""));
+//        try {
+//            System.out.println(String.format("%" + count + "s", ' ').replaceAll("\\ ", "\\" + ".") + getName());
+//        } catch (FormatFlagsConversionMismatchException c) {
+//            System.out.println("F-A-L-S-E   S-T-A-R-T\n" + ">>>" + getName() + "<<<\n" + "#####################\n");
+//        }
     }
 
     public String getName() {
