@@ -64,6 +64,6 @@ public class Hippodrome {
         game.horses.add(new Horse("GreenHorse", 3.0, 0.0));
         game.horses.add(new Horse("WhiteHorse", 3.0, 0.0));
         game.run();
-        game.getWinner();
+        game.printWinner();
     }
 }
