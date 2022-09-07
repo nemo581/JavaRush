@@ -9,7 +9,6 @@ public class Solution {
 
     public static String getPartOfString(String string) throws TooShortStringException {
         int index;
-        
         try {
             index = string.indexOf("\t");
         } catch (NullPointerException n) {
