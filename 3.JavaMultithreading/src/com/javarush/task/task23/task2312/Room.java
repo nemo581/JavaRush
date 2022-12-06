@@ -15,6 +15,14 @@ public class Room {
         this.snake = snake;
     }
 
+    public void createMouse() {
+        mouse = new Mouse((int) (Math.random() * width), (int) (Math.random() * height));
+    }
+
+    public void eatMouse() {
+        createMouse();
+    }
+
     public void run() {
 
     }
