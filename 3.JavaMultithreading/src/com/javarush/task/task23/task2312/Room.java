@@ -27,6 +27,10 @@ public class Room {
 
     }
 
+    public void sleep() {
+
+    }
+
     public void print() {
 
     }
@@ -67,6 +71,9 @@ public class Room {
         Snake snake1 = new Snake(0, 0);
         game = new Room(200, 200, snake1);
         snake1.setDirection(SnakeDirection.DOWN);
+
+        game.createMouse();
+        game.run();
 
     }
 }
