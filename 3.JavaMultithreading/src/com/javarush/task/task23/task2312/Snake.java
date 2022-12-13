@@ -5,35 +5,13 @@ import java.util.List;
 
 public class Snake {
     private List<SnakeSection> sections;
-    private boolean isAlive = true;
+    private boolean isAlive;
     private SnakeDirection direction;
-
-    public List<SnakeSection> getSections() {
-        return sections;
-    }
-
-    public boolean isAlive() {
-        return isAlive;
-    }
-
-    public SnakeDirection getDirection() {
-        return direction;
-    }
-
-    public void setDirection(SnakeDirection direction) {
-        this.direction = direction;
-    }
 
     public Snake(int x, int y) {
         sections = new ArrayList<>();
         sections.add(new SnakeSection(x, y));
-    }
-    public int getX() {
-        return sections.get(0).getX();
-    }
-
-    public int getY() {
-        return sections.get(0).getY();
+        this.isAlive = true;
     }
 
     public void checkBorders(SnakeSection head) {
@@ -52,6 +30,13 @@ public class Snake {
         }
     }
 
+    public int getX() {
+        return sections.get(0).getX();
+    }
+
+    public int getY() {
+        return sections.get(0).getY();
+    }
     public void move() {
         if (isAlive) {
             if (this.direction.equals(SnakeDirection.UP)) {
@@ -69,6 +54,45 @@ public class Snake {
         }
     }
 
-    public void move(int x, int y) {
+    public void move(int dx, int dy) {
+        //Создаем новую голову - новый "кусочек змеи".
+        SnakeSection head = sections.get(0);
+        head = new SnakeSection(head.getX() + dx, head.getY() + dy);
+
+        //Проверяем - не вылезла ли голова за границу комнаты
+        checkBorders(head);
+        if (!isAlive) return;
+
+        //Проверяем - не пересекает ли змея  саму себя
+        checkBody(head);
+        if (!isAlive) return;
+
+        //Проверяем - не съела ли змея мышь.
+        Mouse mouse = Room.game.getMouse();
+        if (head.getX() == mouse.getX() && head.getY() == mouse.getY()) //съела
+        {
+            sections.add(0, head);                  //Добавили новую голову
+            Room.game.eatMouse();                         //Хвост не удаляем, но создаем новую мышь.
+        } else //просто движется
+        {
+            sections.add(0, head);                  //добавили новую голову
+            sections.remove(sections.size() - 1);   //удалили последний элемент с хвоста
+        }
+    }
+
+    public List<SnakeSection> getSections() {
+        return sections;
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public SnakeDirection getDirection() {
+        return direction;
+    }
+
+    public void setDirection(SnakeDirection direction) {
+        this.direction = direction;
     }
 }
