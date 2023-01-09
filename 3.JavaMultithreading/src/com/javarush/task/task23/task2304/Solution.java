@@ -1,9 +1,7 @@
 package com.javarush.task.task23.task2304;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /* 
 Inner 3
@@ -35,18 +33,17 @@ public class Solution {
     private class TaskDataProvider implements DbDataProvider<Task> {
         @Override
         public void refreshAllData(Map criteria) {
-            tasks = new ArrayList<>(Objects.requireNonNull(MockDB.getFakeTasks(criteria)));
+            tasks = MockDB.getFakeTasks(criteria);
         }
     }
 
     private class NameDataProvider implements DbDataProvider<String> {
         @Override
         public void refreshAllData(Map criteria) {
-            names = new ArrayList<>(Objects.requireNonNull(MockDB.getFakeNames(criteria)));
+            names = MockDB.getFakeNames(criteria);
         }
     }
 
     public static void main(String[] args) {
-
     }
 }
