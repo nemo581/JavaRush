@@ -5,6 +5,7 @@ import java.util.List;
 public class Arkanoid {
     private int width;
     private int height;
+
     private Ball ball;
     private Stand stand;
     private List<Brick> bricks;
