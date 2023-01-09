@@ -22,7 +22,16 @@ public class Arkanoid {
     }
 
     public void move() {
+        getBall().move();
+        getStand().move();
+    }
 
+    void draw(Canvas canvas) {
+        getBall().draw(canvas);
+        getStand().draw(canvas);
+        for (Brick brick : getBricks()) {
+            brick.draw(canvas);
+        }
     }
 
     public int getWidth() {
