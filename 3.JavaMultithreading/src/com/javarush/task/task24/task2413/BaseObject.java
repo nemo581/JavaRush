@@ -13,14 +13,15 @@ public abstract class BaseObject {
         this.radius = radius;
     }
 
+    protected BaseObject() {
+    }
+
     abstract void draw(Canvas canvas);
 
     abstract void move();
 
     boolean intersects(BaseObject o) {
-        return Math.sqrt((Math.pow((o.x - this.x), 2)) +
-                (Math.pow((o.y - this.y), 2))) <=
-                max(o.radius, this.radius);
+        return Math.sqrt((Math.pow((o.x - this.x), 2)) + (Math.pow((o.y - this.y), 2))) <= max(o.radius, this.radius);
     }
 
     public double getX() {
