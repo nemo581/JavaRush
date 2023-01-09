@@ -41,6 +41,19 @@ public class Canvas extends BaseObject {
 
     }
 
+    public void clear() {
+        matrix = new char[height + 2][width + 2];
+    }
+
+    public void print() {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int k = 0; k < matrix[i].length; k++) {
+                System.out.print(matrix[i][k]);
+            }
+            System.out.println();
+        }
+    }
+
     public int getWidth() {
         return width;
     }
