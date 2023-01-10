@@ -12,11 +12,6 @@ public class Solution {
     }
 
     public static Class getExpectedClass() {
-        for (Class clazz : Collections.class.getDeclaredClasses()) {
-            if (clazz.getSimpleName().equals("EmptyList")) {
-                return clazz;
-            }
-        }
         return null;
     }
 }
