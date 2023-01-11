@@ -39,7 +39,6 @@ public class Solution implements Action {
                         public void someAction() {
                             sb.append(SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM).append(param);
                             super.someAction();
-
                         }
                     };
                 }
@@ -47,7 +46,6 @@ public class Solution implements Action {
             }
         }
     };
-
 
     public Solution(int param) {
         this.param = param;
