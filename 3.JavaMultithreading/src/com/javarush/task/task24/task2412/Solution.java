@@ -43,19 +43,6 @@ public class Solution {
     }
 
     public static void sort(List<Stock> list) {
-//        ArrayList<String> sortName = new ArrayList<>();
-//        for (Stock s : list) {
-//            sortName.add(s.get("name").toString());
-//        }
-//        Collections.sort(sortName);
-//        for (String s : sortName) {
-//            for (Stock stock : list) {
-//                if (stock.get("name").equals(s)) {
-//                    System.out.println(stock);
-//                }
-//            }
-//        }
-
         class StockNameComparator implements Comparator<Stock> {
             public int compare(Stock a, Stock b) {
                 return a.get("name").toString().compareTo(b.get("name").toString());
