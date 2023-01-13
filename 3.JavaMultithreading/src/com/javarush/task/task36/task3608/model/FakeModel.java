@@ -7,20 +7,19 @@ import java.util.List;
 
 public class FakeModel implements Model {
     private final ModelData modelData = new ModelData();
-
-    @Override
-    public void loadUsers() {
-        String userName;
-        List<User> addNewUsers = new ArrayList<>();
-        for (int i = 0; i < 600; i++) {
-            userName = "UserName_#" + i;
-            addNewUsers.add(new User(userName, i, 1));
-        }
-        modelData.setUsers(addNewUsers);
-    }
-
     @Override
     public ModelData getModelData() {
         return modelData;
+    }
+
+    @Override
+    public void loadUsers() {
+        List<User> loadingUsers = new ArrayList<>();
+        String userName;
+        for (int i = 0; i < 3; i++) {
+            userName = "UserName_#" + i;
+            loadingUsers.add(new User(userName, i, 1));
+        }
+        modelData.setUsers(loadingUsers);
     }
 }
