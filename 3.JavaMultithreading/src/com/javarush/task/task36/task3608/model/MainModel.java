@@ -4,6 +4,7 @@ import com.javarush.task.task36.task3608.bean.User;
 import com.javarush.task.task36.task3608.model.service.UserService;
 import com.javarush.task.task36.task3608.model.service.UserServiceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainModel implements Model {
@@ -39,6 +40,13 @@ public class MainModel implements Model {
         userService.deleteUser(id);
         List<User> users = getAllUsers();
         modelData.setUsers(users);
+    }
+
+    @Override
+    public void changeUserData(String name, long id, int level) {
+        userService.createOrUpdateUser(name, id, level);
+        List<User> user = getAllUsers();
+        modelData.setUsers(user);
     }
 
     @Override

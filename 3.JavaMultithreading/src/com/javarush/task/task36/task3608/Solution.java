@@ -21,10 +21,10 @@ public class Solution {
         controller.setUsersView(usersView);
         controller.setEditUserView(editUserView);
 
-        //emulate user events
         usersView.fireEventShowAllUsers();
         usersView.fireEventOpenUserEditForm(126L);
         editUserView.fireEventUserDeleted(124L);
+        editUserView.fireEventUserChanged("NewName", 125L, 73);
         usersView.fireEventShowDeletedUsers();
     }
 }
