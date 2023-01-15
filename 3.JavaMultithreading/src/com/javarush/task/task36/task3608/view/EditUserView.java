@@ -17,6 +17,5 @@ public class EditUserView implements View {
     @Override
     public void setController(Controller controller) {
         this.controller = controller;
-
     }
 }

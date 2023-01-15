@@ -22,10 +22,15 @@ public class MainModel implements Model {
     }
 
     @Override
+    public void loadUserById(long userId) {
+        User user = userService.getUsersById(userId);
+        modelData.setActiveUser(user);
+    }
+
+    @Override
     public void loadDeletedUsers() {
         List<User> users = userService.getAllDeletedUsers();
         modelData.setUsers(users);
         modelData.setDisplayDeletedUserList(true);
-
     }
 }
