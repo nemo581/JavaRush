@@ -19,6 +19,7 @@ public class UsersView implements View {
         controller.onOpenUserEditForm(id);
     }
 
+
     @Override
     public void refresh(ModelData modelData) {
         System.out.println("All " + (modelData.isDisplayDeletedUserList() ? "deleted " : "") + "users:");

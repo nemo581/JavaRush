@@ -29,6 +29,11 @@ public class FakeModel implements Model {
     }
 
     @Override
+    public void deleteUserById(long id) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public void loadDeletedUsers() {
         throw new UnsupportedOperationException();
     }
