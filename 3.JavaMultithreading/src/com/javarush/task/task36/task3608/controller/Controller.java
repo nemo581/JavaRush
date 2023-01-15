@@ -1,5 +1,6 @@
 package com.javarush.task.task36.task3608.controller;
 
+import com.javarush.task.task36.task3608.model.FakeModel;
 import com.javarush.task.task36.task3608.model.Model;
 import com.javarush.task.task36.task3608.view.UsersView;
 
