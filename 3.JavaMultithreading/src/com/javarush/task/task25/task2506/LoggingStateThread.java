@@ -5,7 +5,7 @@ public class LoggingStateThread extends Thread {
 
     @Override
     public void run() {
-        Thread.State tr = this.target.getState();
+        State tr = this.target.getState();
         System.out.println(tr);
         while (true) {
             if (tr != this.target.getState()) {
