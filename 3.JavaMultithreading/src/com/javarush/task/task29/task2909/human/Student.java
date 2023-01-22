@@ -5,6 +5,8 @@ import java.util.Date;
 public class Student extends Human {
     private double averageGrade;
     private String university;
+    private int course;
+
     private Date beginningOfSession;
     private Date endOfSession;
 
@@ -20,6 +22,18 @@ public class Student extends Human {
     }
 
     public void learn() {
+    }
+
+    public String getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+
+    public int getCourse() {
+        return course;
     }
 
     public void printData() {
@@ -45,20 +59,15 @@ public class Student extends Human {
         }
     }
 
-
-    public double getAverageGrade() {
-        return averageGrade;
-    }
-    public String getUniversity() {
-        return university;
-    }
-    public void setUniversity(String university) {
-        this.university = university;
-    }
     public void setBeginningOfSession(int day, int month, int year) {
         beginningOfSession = new Date(year, month, day);
     }
+
     public void setEndOfSession(int day, int month, int year) {
         endOfSession = new Date(year, month, day);
+    }
+
+    public double getAverageGrade() {
+        return averageGrade;
     }
 }
