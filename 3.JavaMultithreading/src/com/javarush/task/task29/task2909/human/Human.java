@@ -8,7 +8,7 @@ public class Human implements Alive {
 
     private final List<Human> children = new ArrayList<>();
 
-    public static int nextId = 0;
+    private static int nextId = 0;
     private int id;
     protected int age;
     protected String name;
@@ -73,10 +73,6 @@ public class Human implements Alive {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void printSize() {
