@@ -17,6 +17,16 @@ public class User {
         this.age = age;
     }
 
+    public void printInfo() {
+        System.out.println("Имя: " +  this.name);
+        System.out.println("Фамилия: " + this.surname);
+    }
+
+    public void printAdditionalInfo() {
+        System.out.println(this.age < 16 ? "Пользователь моложе 16 лет" :
+                                            "Пользователь старше 16 лет");
+    }
+
     public String getName() {
         return name;
     }
