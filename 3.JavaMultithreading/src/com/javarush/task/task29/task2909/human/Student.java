@@ -22,14 +22,6 @@ public class Student extends Human {
     public void learn() {
     }
 
-    public String getUniversity() {
-        return university;
-    }
-
-    public void setUniversity(String university) {
-        this.university = university;
-    }
-
     public void printData() {
         System.out.println("Студент: " + name);
     }
@@ -53,15 +45,20 @@ public class Student extends Human {
         }
     }
 
-    public void setBeginningOfSession(int day, int month, int year) {
-        beginningOfSession = new Date(year, month, day);
-    }
-
-    public void setEndOfSession(int day, int month, int year) {
-        endOfSession = new Date(year, month, day);
-    }
 
     public double getAverageGrade() {
         return averageGrade;
+    }
+    public String getUniversity() {
+        return university;
+    }
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+    public void setBeginningOfSession(int day, int month, int year) {
+        beginningOfSession = new Date(year, month, day);
+    }
+    public void setEndOfSession(int day, int month, int year) {
+        endOfSession = new Date(year, month, day);
     }
 }
