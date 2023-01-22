@@ -15,6 +15,11 @@ public class Student extends UniversityPerson {
         this.averageGrade = averageGrade;
     }
 
+    @Override
+    public String getPosition() {
+        return "Студент";
+    }
+
     public void live() {
         learn();
     }
@@ -24,10 +29,6 @@ public class Student extends UniversityPerson {
 
     public int getCourse() {
         return course;
-    }
-
-    public void printData() {
-        System.out.println("Студент: " + name);
     }
 
     public void incAverageGradeBy01() {

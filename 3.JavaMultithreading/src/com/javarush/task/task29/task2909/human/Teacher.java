@@ -13,10 +13,11 @@ public class Teacher extends UniversityPerson {
         teach();
     }
 
-    public void teach() {
+    @Override
+    public String getPosition() {
+        return "Преподаватель";
     }
 
-    public void printData() {
-        System.out.println("Преподаватель: " + name);
+    public void teach() {
     }
 }
