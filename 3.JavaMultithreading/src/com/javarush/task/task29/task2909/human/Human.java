@@ -6,19 +6,20 @@ import java.util.List;
 
 public class Human {
     private final List<Human> children = new ArrayList<>();
+
     public static int nextId = 0;
     private int id;
     protected int age;
     protected String name;
     protected int course;
+
     protected int[] size;
-    protected boolean isSoldier;
+
     public static final int FIRST = 1;
     public static final int SECOND = 2;
     public static final int THIRD = 3;
     public static final int FOURTH = 4;
     private int bloodGroup;
-
 
     public void setBloodGroup(int code) {
         bloodGroup = code;
@@ -28,8 +29,9 @@ public class Human {
         return bloodGroup;
     }
 
-    public Human(boolean isSoldier) {
-        this.isSoldier = isSoldier;
+    public Human(String name, int age) {
+        this.name = name;
+        this.age = age;
         this.id = nextId;
         nextId++;
     }
@@ -64,14 +66,6 @@ public class Human {
 
     public void removeChild(Human human) {
         this.children.remove(human);
-    }
-
-    public void live() {
-        if (isSoldier)
-            fight();
-    }
-
-    public void fight() {
     }
 
     public int getId() {
