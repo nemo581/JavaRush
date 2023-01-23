@@ -4,12 +4,46 @@ public class User {
     private String name;
     private String surname;
     private int age;
-
-    private String country;
-    private String city;
-    private House house;
-
     private Work work;
+    private boolean man;
+
+    private Address address;
+
+    public String getBoss() {
+        return work.getBoss();
+    }
+
+    public String getAddress() {
+//        return address.getCountry(), address.setCity(), address.setHouse();
+        String result = address.getCountry() + ", " +
+                        address.getCity() + ", " +
+                        address.getHouse() + ".";
+        return result;
+    }
+
+    public String getCountry() {
+        return this.address.getCountry();
+    }
+
+    public void setCountry(String country) {
+        this.address.setCountry(country);
+    }
+
+    public String getCity() {
+        return this.address.getCity();
+    }
+
+    public void setCity(String city) {
+        this.address.setCity(city);
+    }
+
+    public boolean isMan() {
+        return man;
+    }
+
+    public void setMan(boolean man) {
+        this.man = man;
+    }
 
     public User(String name, String surname, int age) {
         this.name = name;
@@ -49,26 +83,6 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getAddress() {
-        return country + " " + city + " " + house.house;
     }
 
     public Work getWork() {
