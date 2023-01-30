@@ -18,6 +18,8 @@ public class User {
         String result = address.getCountry() + ", " +
                         address.getCity() + ", " +
                         address.getHouse() + ".";
+
+
         return result;
     }
 
@@ -36,6 +38,7 @@ public class User {
     public void setCity(String city) {
         this.address.setCity(city);
     }
+
 
     public boolean isMan() {
         return man;

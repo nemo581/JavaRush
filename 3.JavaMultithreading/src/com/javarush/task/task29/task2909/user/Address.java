@@ -5,6 +5,7 @@ public class Address {
     private String city;
     private String house;
 
+
     public String getCountry() {
         return country;
     }
