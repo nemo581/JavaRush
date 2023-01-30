@@ -21,22 +21,33 @@ public class Solution {
 
     public static Integer[] sort(Integer[] array) {
         Arrays.sort(array);
-        int median = (array.length % 2 == 0) ? (array[(array.length / 2)] + array[(array.length / 2 - 1)]) / 2 :
+        double median = (array.length % 2 == 0) ? (array[(array.length / 2)] + array[(array.length / 2 - 1)]) / 2 :
                       array[(array.length + 1) / 2 - 1];
 
-        int tmp;
-        for (int i = 0; i < array.length; i++) {
-            int basic_1 = Math.abs(median - array[i]);
-            for (int k = (i + 1); k < array.length; k++) {
-                int basic_2 = Math.abs(median - array[k]);
-                if (basic_1 > basic_2) {
-                    basic_1 = basic_2;
-                    tmp = array[i];
-                    array[i] = array[k];
-                    array[k] = tmp;
-                }
+        Arrays.sort(array, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                double v1 = o1.intValue() - median;
+                double v2 = o2.intValue() - median;
+                return (int) ((v1 * v1 - v2 * v2) * 100);
             }
-        }
+        });
+
+//        int median = (array.length % 2 == 0) ? (array[(array.length / 2)] + array[(array.length / 2 - 1)]) / 2 :
+//                array[(array.length + 1) / 2 - 1];
+//        int tmp;
+//        for (int i = 0; i < array.length; i++) {
+//            int basic_1 = Math.abs(median - array[i]);
+//            for (int k = (i + 1); k < array.length; k++) {
+//                int basic_2 = Math.abs(median - array[k]);
+//                if (basic_1 > basic_2) {
+//                    basic_1 = basic_2;
+//                    tmp = array[i];
+//                    array[i] = array[k];
+//                    array[k] = tmp;
+//                }
+//            }
+//        }
         return array;
     }
 }
