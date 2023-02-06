@@ -11,9 +11,35 @@ public class Server {
 
     private static class Handler extends Thread {
         private Socket socket;
-
         public Handler(Socket socket) {
             this.socket = socket;
+        }
+
+        private String serverHandshake(Connection connection) throws ClassNotFoundException, IOException {
+            while (true) {
+                connection.send(new Message(MessageType.NAME_REQUEST));
+
+                Message responseFromTheServer = connection.receive();
+                if (responseFromTheServer.getType() != MessageType.USER_NAME) {
+                    ConsoleHelper.writeMessage("Получено сообщение от " + socket.getRemoteSocketAddress() + ". Тип сообщения не соответствует протоколу.");
+                    continue;
+                }
+
+                String userName = responseFromTheServer.getData();
+                if (userName.isEmpty()) {
+                    ConsoleHelper.writeMessage("Попытка подключения к серверу с пустым именем от " + socket.getRemoteSocketAddress());
+                    continue;
+                }
+
+                if (connectionMap.containsKey(userName)) {
+                    ConsoleHelper.writeMessage("Попытка подключения к серверу с уже используемым именем от " + socket.getRemoteSocketAddress());
+                    continue;
+                }
+                connectionMap.put(userName, connection);
+
+                connection.send(new Message(MessageType.NAME_ACCEPTED));
+                return userName;
+            }
         }
     }
 
