@@ -19,13 +19,14 @@ public class Server {
             while (true) {
                 connection.send(new Message(MessageType.NAME_REQUEST));
 
-                Message responseFromTheServer = connection.receive();
-                if (responseFromTheServer.getType() != MessageType.USER_NAME) {
+                Message message = connection.receive();
+                if (message.getType() != MessageType.USER_NAME) {
                     ConsoleHelper.writeMessage("Получено сообщение от " + socket.getRemoteSocketAddress() + ". Тип сообщения не соответствует протоколу.");
                     continue;
                 }
 
-                String userName = responseFromTheServer.getData();
+                String userName = message.getData();
+
                 if (userName.isEmpty()) {
                     ConsoleHelper.writeMessage("Попытка подключения к серверу с пустым именем от " + socket.getRemoteSocketAddress());
                     continue;
@@ -39,6 +40,14 @@ public class Server {
 
                 connection.send(new Message(MessageType.NAME_ACCEPTED));
                 return userName;
+            }
+        }
+
+        private void notifyUsers(Connection connection, String userName) throws IOException {
+            for (String name : connectionMap.keySet()) {
+                if (!name.equals(userName)) {
+                    connection.send(new Message(MessageType.USER_ADDED, name));
+                }
             }
         }
     }
