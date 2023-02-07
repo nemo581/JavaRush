@@ -62,6 +62,23 @@ public class Server {
                 }
             }
         }
+
+        @Override
+        public void run() {
+            System.out.println(socket.getRemoteSocketAddress());
+            try {
+                Connection connection = new Connection(socket);
+                String userName = serverHandshake(connection);
+                sendBroadcastMessage(new Message(MessageType.USER_ADDED, userName));
+                notifyUsers(connection, userName);
+                serverMainLoop(connection, userName);
+                connectionMap.remove(userName);
+                sendBroadcastMessage(new Message(MessageType.USER_REMOVED, userName));
+
+            } catch (IOException | ClassNotFoundException e) {
+                ConsoleHelper.writeMessage("Error");
+            }
+        }
     }
 
     public static void sendBroadcastMessage(Message message) {
