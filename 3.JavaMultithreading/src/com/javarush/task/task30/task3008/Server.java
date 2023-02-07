@@ -50,10 +50,21 @@ public class Server {
                 }
             }
         }
+
+        private void serverMainLoop(Connection connection, String userName) throws IOException, ClassNotFoundException {
+            while(true) {
+                Message message = connection.receive();
+                if (message.getType() == MessageType.TEXT) {
+                    String outTXT = userName + ": " + message.getData();
+                    sendBroadcastMessage(new Message(MessageType.TEXT, outTXT));
+                } else {
+                    ConsoleHelper.writeMessage("Error");
+                }
+            }
+        }
     }
 
     public static void sendBroadcastMessage(Message message) {
-
         for (Connection connection : connectionMap.values()) {
             try {
                 connection.send(message);
