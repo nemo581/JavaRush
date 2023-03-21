@@ -7,8 +7,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public abstract class ZipCommand implements Command {
-    public ZipFileManager getZipFileManager () throws Exception {
-        ConsoleHelper.writeMessage("Создание архива.");
-        return new ZipFileManager(Paths.get(ConsoleHelper.readString()));
+
+    public ZipFileManager getZipFileManager() throws Exception {
+        ConsoleHelper.writeMessage("Введите полный путь файла архива:");
+        Path zipPath = Paths.get(ConsoleHelper.readString());
+        return new ZipFileManager(zipPath);
     }
 }

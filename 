@@ -1,0 +1,297 @@
+[33mcommit 8b641f203aa3683f26b4c0b9ea1fbce87af3f423[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Mar 21 18:52:12 2023 +0300
+
+    task3110_Archiver (11)
+
+[33mcommit 5724ef71136c45d449113f186f0594117301778e[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Mar 21 18:15:55 2023 +0300
+
+    task3110_Archiver (10)
+
+[33mcommit 7ec83666f31f760e86aedfa2c68d44f666368b43[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Wed Mar 15 22:42:18 2023 +0300
+
+    task3110_Archiver (9)
+
+[33mcommit 0e4c9d4816d88b5c3bc14e06222ac505321560f7[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Wed Mar 15 18:13:19 2023 +0300
+
+    task3110_Archiver (8)
+
+[33mcommit 4a65c3c252ee95fe8e7607716f2bcb0ed186c7a2[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Mar 14 18:15:51 2023 +0300
+
+    task3110_Archiver (7)
+
+[33mcommit e6aa5c5f2185b2b284a4301580c06e56927de659[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Mar 14 18:11:34 2023 +0300
+
+    task3110_Archiver (6)
+
+[33mcommit 4bfa7d12271818908764d4bcd32b540a7abb38f3[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Mar 14 17:10:32 2023 +0300
+
+    task3110_Archiver (5)
+
+[33mcommit aac199e5f9934ce4fe7373ddc74a0c8584bbbbfe[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Mon Mar 13 22:15:13 2023 +0300
+
+    task3110_Archiver (4)
+
+[33mcommit 3a7107905073b42ae50153b8ca7b2b417d3fd424[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Mon Mar 13 20:24:23 2023 +0300
+
+    task3110_Archiver (3)
+
+[33mcommit c6fdf7819b70b8abe2f3abcb985e37978a49bc6d[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Mon Mar 13 18:58:30 2023 +0300
+
+    task3110_Archiver (2)
+
+[33mcommit b6596f10fdcbdfad104e0408409add887e61a6c2[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Mon Mar 13 17:54:54 2023 +0300
+
+    task3110_Archiver (1)
+
+[33mcommit 53bceeb314760c4c3a3fba0102b206ae4dc4c1cb[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Mon Mar 13 17:34:07 2023 +0300
+
+    other
+
+[33mcommit d977d3ffe38c1d0754ef7bb4cd2da9d5f59a22aa[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sun Mar 5 20:02:16 2023 +0300
+
+    task2711_CountDownLatch
+
+[33mcommit 6095a82c4308829736acd26e3ddbf2de75390adc[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sun Mar 5 18:35:44 2023 +0300
+
+    task2710_Расставь wait-notify
+
+[33mcommit 7bc55048776f63ce537481d3a7ab19e3ff7015d3[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sun Mar 5 15:28:36 2023 +0300
+
+    task2709_Producer-consumer
+
+[33mcommit 27a05dada392a39de1af9574d33b4ebd36b184ce[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sun Mar 5 14:49:20 2023 +0300
+
+    task2708_Убираем deadLock используя открытые вызовы
+
+[33mcommit 2a08ca6936afe0473c37b3d504a29d0f0244678a[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sun Mar 5 12:13:12 2023 +0300
+
+    task2707_Определяем порядок захвата монитора
+
+[33mcommit 7dd456cca8b12ace4e888406f2e3448c09cd635c[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sat Mar 4 23:00:01 2023 +0300
+
+    task2706_Убираем deadlock
+
+[33mcommit a1fa2d9a744c96cc68159217b6105dae719a8979[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sat Mar 4 21:43:12 2023 +0300
+
+    task2704_Модификаторы и deadlock
+
+[33mcommit 2412eb17a7290e0e4db22aae1a0d0f3c547ebfe4[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sat Mar 4 21:18:13 2023 +0300
+
+    task2705_Второй вариант deadlock
+
+[33mcommit 61be329dc444b5f35775d64bec617f5c7ab1a504[m
+Author: Your NameAlRezn <alrezn@gmail.com>
+Date:   Sat Mar 4 21:06:57 2023 +0300
+
+    task2703_Создаем deadlock
+
+[33mcommit a57f5ffbffcebee9fe4ff8deb38db3cad2fe9b4c[m
+Author: Your NameAlRezn <alrezn@gmail.com>
+Date:   Sat Mar 4 19:31:12 2023 +0300
+
+    ?
+
+[33mcommit 581e8cc938fe2546bd4d82a1a17289353fdbce97[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Mon Feb 13 20:56:08 2023 +0300
+
+    task2702_Нужный оператор
+
+[33mcommit 0720db1fd6cf441aca2e73e4ce22bf7d10378bdd[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Mon Feb 13 20:52:42 2023 +0300
+
+    task2701_Избавляемся от меток
+
+[33mcommit 2ad3b10d60a30b04a7eee9643f503a0be667c8b9[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sat Feb 11 13:10:19 2023 +0300
+
+    task3008_Чат (22)
+
+[33mcommit eaed859b094c2e37d93fa714a22b7a30f64b7ce5[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Fri Feb 10 16:37:00 2023 +0300
+
+    Чат (21)
+
+[33mcommit 67a81eb4a71336e8678e99df128c57287ad1498a[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Fri Feb 10 10:28:28 2023 +0300
+
+    task3008_*.gitignore
+
+[33mcommit 281c381f5b7aaac964c6914059c609e9854085f2[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Fri Feb 10 09:30:42 2023 +0300
+
+    task3008_Чат(19)
+
+[33mcommit b316305ac24e52bdca027ad788a2dd1f7f39eee1[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Feb 7 21:41:16 2023 +0300
+
+    tasl3008_Чат (18)
+
+[33mcommit 67c8e5c08842e9b09c253f9c26284eb34ecfe4fe[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Feb 7 21:26:28 2023 +0300
+
+    task3008_Чат (17)
+
+[33mcommit fe2a87af28938643cbefd850e573ed5ff99d395d[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Feb 7 21:18:55 2023 +0300
+
+    task3008_Чат (16)
+
+[33mcommit a174fc62eb5a5d85e61bc24641ffc1471e3951a8[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Feb 7 20:28:04 2023 +0300
+
+    task3008_Чат (15)
+
+[33mcommit c72f4e4faaf0a9740ed688852da47544a2b958e7[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Feb 7 20:11:16 2023 +0300
+
+    task3008_Чат (14)
+
+[33mcommit 4da410499e29d31075d3f940e7bbcb2e9275dc11[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Feb 7 19:15:13 2023 +0300
+
+    task3008_Чат (13)
+
+[33mcommit b0512d8385a94a67f1ea15ecf69687fc5bc8a166[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Feb 7 19:02:31 2023 +0300
+
+    task3008_Чат 12
+
+[33mcommit 5df76c889a14f204b11ee1dd7072ba64f73f6841[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Feb 7 18:54:59 2023 +0300
+
+    task3008_Чат (11)
+
+[33mcommit 08db7af3dfd5852a038030e5f4ed980960c4ae3b[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Tue Feb 7 18:20:37 2023 +0300
+
+    task3008_Чат (10)
+
+[33mcommit 883d49b74731700f3008c39ef883b7c47a77c7b0[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Mon Feb 6 21:12:03 2023 +0300
+
+    task3008_Чат (9)
+
+[33mcommit 141789e557ec409983cf6ceff30509ea0b92b0ba[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Mon Feb 6 20:08:52 2023 +0300
+
+    task3008_Чат (8)
+
+[33mcommit a67c43bdad6afd8c5435dede632f3dcd3a26bf16[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Mon Feb 6 01:13:05 2023 +0300
+
+    task3008_Чат (7)
+
+[33mcommit 46552b8d56c5d1be254889344db1f9a6dbc0e8d4[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Mon Feb 6 00:45:39 2023 +0300
+
+    task3008_Чат (6)
+
+[33mcommit 8c85103a04215550285506c30089fe5b094e6219[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sun Feb 5 23:40:58 2023 +0300
+
+    task3008_Чат(5)
+
+[33mcommit da2aebd3bb3bb8500d09e846dc7bf18c92ab3699[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sun Feb 5 17:35:41 2023 +0300
+
+    task3008_Чат (4)
+
+[33mcommit e660ea8f98cfb0911ba53e496936173805ef7a9b[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sun Feb 5 17:29:47 2023 +0300
+
+    task3008_Чат (3)
+
+[33mcommit 3434303cde822defd5d6e6d67aec75e493897f5d[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sun Feb 5 17:24:59 2023 +0300
+
+    task_3008_Чат (2)
+
+[33mcommit 1023d00f53958c40ac70bb52892cab4627e28522[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sun Feb 5 16:49:03 2023 +0300
+
+    task3008_Чат (1)
+
+[33mcommit f2e11ab97138e21cc40c5a0b35485b16f446f621[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Sun Feb 5 13:55:47 2023 +0300
+
+    task2611_ConcurrentHashMap
+
+[33mcommit c65388fb6e3c38dd6cdf72515e547bded86f743e[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Thu Feb 2 19:29:53 2023 +0300
+
+    task2610_Мир скучен для скучных людей / BlockingQueue
+
+[33mcommit af197abc7d92bffe4b236ced5707a94c8f0d12af[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Thu Feb 2 18:37:23 2023 +0300
+
+    task2609_Распределение элементов по корзинам с собственным локом
+
+[33mcommit ced6df65ae62a53f01bc2ecde85f6bd2be243a17[m
+Author: AlRezn <alrezn@gmail.com>
+Date:   Thu F
