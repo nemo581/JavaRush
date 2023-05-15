@@ -6,10 +6,10 @@ import java.io.File;
 public class Controller {
     public static void main(String[] args) {
         View view_1 = new View();
-        Controller controller_1 = new Controller(view_1);
-        view_1.setController(controller_1);
+        Controller controller = new Controller(view_1);
+        view_1.setController(controller);
         view_1.init();
-        controller_1.init();
+        controller.init();
     }
     private View view;
     private HTMLDocument document;
