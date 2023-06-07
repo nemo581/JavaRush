@@ -11,6 +11,7 @@ import javax.swing.undo.UndoManager;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class View extends JFrame implements ActionListener {
     private Controller controller;
@@ -115,6 +116,10 @@ public class View extends JFrame implements ActionListener {
         } catch (CannotRedoException e) {
             ExceptionHandler.log(e);
         }
+    }
+
+    public boolean isHtmlTabSelected() {
+        return tabbedPane.getSelectedIndex() == 0;
     }
 
     public void resetUndo() {
