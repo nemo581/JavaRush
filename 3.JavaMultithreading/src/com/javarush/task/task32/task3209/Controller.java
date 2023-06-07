@@ -3,9 +3,12 @@ package com.javarush.task.task32.task3209;
 import com.javarush.task.task32.task3209.listeners.TextEditMenuListener;
 
 import javax.swing.event.DocumentListener;
+import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.File;
+import java.io.IOException;
+import java.io.StringReader;
 
 public class Controller {
     public static void main(String[] args) {
@@ -25,6 +28,17 @@ public class Controller {
 
     public HTMLDocument getDocument() {
         return document;
+    }
+
+    public void setPlainText(String text) {
+        resetDocument();
+        StringReader reader = new StringReader(text);
+        HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
+        try {
+            htmlEditorKit.read(reader, document, 0);
+        } catch (IOException | BadLocationException e) {
+            ExceptionHandler.log(e);
+        }
     }
 
     public void resetDocument() {
