@@ -1,24 +1,23 @@
 package com.javarush.task.task32.task3209;
 
-import com.javarush.task.task32.task3209.listeners.TextEditMenuListener;
-
-import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
+import java.io.StringWriter;
 
 public class Controller {
     public static void main(String[] args) {
-        View view_1 = new View();
-        Controller controller = new Controller(view_1);
-        view_1.setController(controller);
-        view_1.init();
+        View view = new View();
+        Controller controller = new Controller(view);
+        view.setController(controller);
+        view.init();
         controller.init();
     }
-    private View view;
+
+    private final View view;
     private HTMLDocument document;
     private File currentFile;
 
@@ -48,6 +47,17 @@ public class Controller {
         document = (HTMLDocument) new HTMLEditorKit().createDefaultDocument();
         document.addUndoableEditListener(view.getUndoListener());
         view.update();
+    }
+
+    public String getPlainText() {
+        StringWriter stringWriter = new StringWriter();
+        HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
+        try {
+            htmlEditorKit.write(stringWriter, document, 0, document.getLength());
+        } catch (IOException | BadLocationException e) {
+            ExceptionHandler.log(e);
+        }
+        return stringWriter.toString();
     }
 
     public void init() {
