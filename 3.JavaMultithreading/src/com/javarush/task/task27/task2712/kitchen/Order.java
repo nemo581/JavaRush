@@ -20,7 +20,7 @@ public class Order {
         if (dishes.size() == 0) {
             return "";
         } else {
-            return "Your order:" + dishes + "] of" + tablet + '}';
+            return "Your order: " + dishes + " of " + tablet;
         }
     }
 }

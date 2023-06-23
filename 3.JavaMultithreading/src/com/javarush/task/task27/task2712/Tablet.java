@@ -2,7 +2,6 @@ package com.javarush.task.task27.task2712;
 
 import com.javarush.task.task27.task2712.kitchen.Order;
 
-import java.io.IOException;
 import java.util.Observable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
