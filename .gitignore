@@ -1,14 +1,12 @@
-﻿.gitignore
-JavaRushTasks/.idea/
-JavaRushTasks/lib/
-JavaRushTasks/out.log
-JavaRushTasks/Instruction.png
-JavaRushTasks/JavaRushPlugin.properties
-JavaRushTasks/JavaRushTasks.iml
-Instruction.png
-JavaRushPlugin.properties
-JavaRushTasks.iml
-out.log
-External Libraries/
+﻿#############
+## Idea
+#############
+target/
 .idea/
-lib/
+.idea
+.gitignore
+.repository/
+/JavaRushPlugin.properties
+/Instruction.png
+/out.log
+/out.log.*
