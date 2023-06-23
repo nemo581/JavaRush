@@ -12,6 +12,7 @@ public class Order {
     public Order(Tablet tablet) {
         this.tablet = tablet;
         this.dishes = ConsoleHelper.getAllDishesForOrder();
+        ConsoleHelper.writeMessage(toString());
     }
 
     @Override
