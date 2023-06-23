@@ -15,12 +15,24 @@ public class Order {
         ConsoleHelper.writeMessage(toString());
     }
 
+    public boolean isEmpty() {
+        return dishes.isEmpty();
+    }
+
+    public int getTotalCookingTime() {
+        int time = 0;
+        for (Dish dishTime : dishes) {
+            time += dishTime.getDuration();
+        }
+        return time;
+    }
+
     @Override
     public String toString() {
-        if (dishes.size() == 0) {
+        if (dishes.isEmpty()) {
             return "";
         } else {
-            return "Your order: " + dishes + " of " + tablet;
+            return "Your order: " + dishes + " of " + tablet + ", cooking time " + getTotalCookingTime() + "min";
         }
     }
 }

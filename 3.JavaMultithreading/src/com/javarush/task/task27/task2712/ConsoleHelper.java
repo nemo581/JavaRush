@@ -25,7 +25,7 @@ public class ConsoleHelper {
 
     public static List<Dish> getAllDishesForOrder() {
         List<Dish> choiceList = new ArrayList<>();
-        writeMessage(Dish.allDishesToString() + "\nВыберите название блюда:\n");
+        ConsoleHelper.writeMessage(Dish.allDishesToString() + "\nВыберите название блюда:\n");
         try {
             while (true) {
                 String choice = consoleReader.readLine().toUpperCase().trim();

@@ -18,13 +18,15 @@ public class Tablet extends Observable {
         Order order = null;
         try {
             order = new Order(this);
+            if (order.isEmpty()) {
+                return null;
+            }
             setChanged();
             notifyObservers(order);
-            return order;
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
-            return order;
         }
+        return order;
     }
 
     @Override
