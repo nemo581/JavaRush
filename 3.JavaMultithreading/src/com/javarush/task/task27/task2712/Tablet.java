@@ -1,5 +1,6 @@
 package com.javarush.task.task27.task2712;
 
+import com.javarush.task.task27.task2712.ad.AdvertisementManager;
 import com.javarush.task.task27.task2712.kitchen.Order;
 
 import java.util.Observable;
@@ -23,6 +24,9 @@ public class Tablet extends Observable {
             }
             setChanged();
             notifyObservers(order);
+            AdvertisementManager advertisementManager = new AdvertisementManager
+                    (order.getTotalCookingTime() * 60);
+            advertisementManager.processVideos();
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
         }
