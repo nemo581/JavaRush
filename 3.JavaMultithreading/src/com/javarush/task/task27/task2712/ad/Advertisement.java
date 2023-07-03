@@ -1,5 +1,7 @@
 package com.javarush.task.task27.task2712.ad;
 
+import java.nio.file.Paths;
+
 public class Advertisement {        //  Рекламное объявление                            ||
     private Object content;         //  видео                                           ||
     private String name;            //  имя/название                                    ||
@@ -29,5 +31,13 @@ public class Advertisement {        //  Рекламное объявление 
 
     public long getAmountPerOneDisplaying() {
         return amountPerOneDisplaying;
+    }
+
+    public void revalidate() {
+        if (hits <= 0) {
+            throw new UnsupportedOperationException();
+        } else {
+            hits--;
+        }
     }
 }
