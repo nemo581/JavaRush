@@ -1,13 +1,20 @@
 package com.javarush.task.task27.task2712.ad;
 
-import java.nio.file.Paths;
+public class Advertisement {
+    //видео
+    private Object content;
 
-public class Advertisement {        //  Рекламное объявление                            ||
-    private Object content;         //  видео                                           ||
-    private String name;            //  имя/название                                    ||
-    private long initialAmount;     //  начальная сумма, стоимость рекламы в копейках.  ||
-    private int hits;               //  количество оплаченных показов                   ||
-    private int duration;           //  продолжительность в секундах                    ||
+    private String name;
+
+    //начальная сумма, стоимость рекламы в копейках. Используем long, чтобы избежать проблем с округлением
+    private long initialAmount;
+
+    //количество оплаченных показов
+    private int hits;
+
+    //продолжительность в секундах
+    private int duration;
+
     private long amountPerOneDisplaying;
 
     public Advertisement(Object content, String name, long initialAmount, int hits, int duration) {
@@ -16,8 +23,9 @@ public class Advertisement {        //  Рекламное объявление 
         this.initialAmount = initialAmount;
         this.hits = hits;
         this.duration = duration;
-        if (this.hits != 0) {
-            this.amountPerOneDisplaying = this.initialAmount / hits;
+
+        if (hits > 0) {
+            amountPerOneDisplaying = initialAmount / hits;
         }
     }
 
@@ -34,10 +42,13 @@ public class Advertisement {        //  Рекламное объявление 
     }
 
     public void revalidate() {
-        if (hits <= 0) {
+        if (hits == 0) {
             throw new UnsupportedOperationException();
-        } else {
-            hits--;
         }
+        hits--;
+    }
+
+    public boolean isActive() {
+        return hits > 0;
     }
 }

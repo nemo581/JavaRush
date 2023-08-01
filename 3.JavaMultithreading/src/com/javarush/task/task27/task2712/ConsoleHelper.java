@@ -9,36 +9,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConsoleHelper {
-    private static BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
+    private static BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
 
     public static void writeMessage(String message) {
         System.out.println(message);
     }
 
-    public static String readString() {
-        try {
-            return consoleReader.readLine();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public static String readString() throws IOException {
+        return bis.readLine();
     }
 
-    public static List<Dish> getAllDishesForOrder() {
-        List<Dish> choiceList = new ArrayList<>();
-        ConsoleHelper.writeMessage(Dish.allDishesToString() + "\nВыберите название блюда:\n");
-        try {
-            while (true) {
-                String choice = consoleReader.readLine().toUpperCase().trim();
-                if (choice.equalsIgnoreCase("exit")) break;
-                try {
-                    choiceList.add(Enum.valueOf(Dish.class, choice));
-                } catch (IllegalArgumentException e) {
-                    writeMessage("такого блюда нет");
-                }
+    public static List<Dish> getAllDishesForOrder() throws IOException {
+        List<Dish> dishes = new ArrayList<>();
+        ConsoleHelper.writeMessage("Please choose a dish from the list:" + Dish.allDishesToString() + "\n or type 'exit' to complete the order");
+        while (true) {
+            String dishName = ConsoleHelper.readString().trim();
+            if ("exit".equals(dishName)) {
+                break;
             }
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
+
+            try {
+                Dish dish = Dish.valueOf(dishName);
+                dishes.add(dish);
+                writeMessage(dishName + " has been successfully added to your order");
+            } catch (Exception e) {
+                writeMessage(dishName + " hasn't been detected");
+            }
         }
-        return choiceList;
+
+        return dishes;
     }
 }

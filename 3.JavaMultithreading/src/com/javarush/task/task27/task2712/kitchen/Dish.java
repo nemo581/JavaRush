@@ -8,24 +8,25 @@ public enum Dish {
     WATER(3);
 
     private int duration;
-    Dish(int duration) {
-        this.duration = duration;
-    }
 
     public int getDuration() {
         return duration;
     }
 
+    Dish(int duration) {
+        this.duration = duration;
+    }
+
     public static String allDishesToString() {
-        StringBuilder listOfDishes = new StringBuilder();
-        for (int i = 0; i < Dish.values().length; i++) {
-            if (i == Dish.values().length - 1) {
-                listOfDishes.append(Dish.values()[i]);
+        String result = "";
+
+        for (Dish dish : Dish.values()) {
+            if ("".equals(result)) {
+                result += dish.name();
             } else {
-                listOfDishes.append(Dish.values()[i]);
-                listOfDishes.append(", ");
+                result += ", " + dish.name();
             }
         }
-        return listOfDishes.toString();
+        return result;
     }
 }
