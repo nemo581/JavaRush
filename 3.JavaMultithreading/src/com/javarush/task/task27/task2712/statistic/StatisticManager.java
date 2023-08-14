@@ -9,30 +9,36 @@ import java.util.List;
 import java.util.Map;
 
 public class StatisticManager {
-    private final StatisticStorage statisticStorage = new StatisticStorage();
-    private static StatisticManager instance;
-    public void register(EventDataRow edr) {
+    private static com.javarush.task.task27.task2712.statistic.StatisticManager ourInstance = new com.javarush.task.task27.task2712.statistic.StatisticManager();
 
+    public static com.javarush.task.task27.task2712.statistic.StatisticManager getInstance() {
+        return ourInstance;
     }
 
-    public static StatisticManager getInstance() {
-        if (instance ==null) {
-            instance = new StatisticManager();
-        }
-        return instance;
-    }
+    private com.javarush.task.task27.task2712.statistic.StatisticManager.StatisticStorage statisticStorage = new com.javarush.task.task27.task2712.statistic.StatisticManager.StatisticStorage();
 
     private StatisticManager() {
     }
 
-    private static class StatisticStorage {
-        Map<EventType, List<EventDataRow>> storage;
+    private class StatisticStorage {
+        private Map<EventType, List<EventDataRow>> storage = new HashMap<>();
 
-        public StatisticStorage() {
-            storage = new HashMap<>();
-            for (int i = 0; i < EventType.values().length; i++) {
-                storage.put(EventType.values()[i], new ArrayList<EventDataRow>());
+        private StatisticStorage() {
+            for (EventType type : EventType.values()) {
+                this.storage.put(type, new ArrayList<EventDataRow>());
             }
         }
+
+        private void put(EventDataRow data) {
+            EventType type = data.getType();
+            if (!this.storage.containsKey(type))
+                throw new UnsupportedOperationException();
+
+            this.storage.get(type).add(data);
+        }
+    }
+
+    public void register(EventDataRow data) {
+        this.statisticStorage.put(data);
     }
 }
