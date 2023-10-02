@@ -5,7 +5,6 @@ import com.javarush.task.task27.task2712.kitchen.Waiter;
 
 public class Restaurant {
     public static void main(String[] args) {
-        DirectorTablet directorTablet = new DirectorTablet();
         Tablet tablet = new Tablet(5);
         Cook cook = new Cook("Amigo");
         Waiter waiter = new Waiter();
@@ -17,8 +16,9 @@ public class Restaurant {
         tablet.createOrder();
         tablet.createOrder();
 
-        directorTablet.printCookWorkloading();
+        DirectorTablet directorTablet = new DirectorTablet();
         directorTablet.printAdvertisementProfit();
+        directorTablet.printCookWorkloading();
         directorTablet.printActiveVideoSet();
         directorTablet.printArchivedVideoSet();
     }
