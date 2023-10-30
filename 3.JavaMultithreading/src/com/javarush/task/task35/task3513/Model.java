@@ -1,9 +1,12 @@
 package com.javarush.task.task35.task3513;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Model {
+    protected int score;
+    protected int maxTile;
     private static final int FIELD_WIDTH = 4;
     private Tile[][] gameTiles;
 
@@ -38,5 +41,44 @@ public class Model {
         }
         addTile();
         addTile();
+    }
+
+    private void compressTiles(Tile[] tiles) { // сжатие
+        int insertPosition = 0;
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            if (!tiles[i].isEmpty()) {
+                if (i != insertPosition) {
+                    tiles[insertPosition] = tiles[i];
+                    tiles[i] = new Tile();
+                }
+                insertPosition++;
+            }
+        }
+    }
+
+    private void mergeTiles(Tile[] tiles) { // объеденение
+        LinkedList<Tile> tilesList = new LinkedList<>();
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            if (tiles[i].isEmpty()) {
+                continue;
+            }
+
+            if (i < FIELD_WIDTH - 1 && tiles[i].value == tiles[i + 1].value) {
+                int updatedValue = tiles[i].value * 2;
+                if (updatedValue > maxTile) {
+                    maxTile = updatedValue;
+                }
+                score += updatedValue;
+                tilesList.addLast(new Tile(updatedValue));
+                tiles[i + 1].value = 0;
+            } else {
+                tilesList.addLast(new Tile(tiles[i].value));
+            }
+            tiles[i].value = 0;
+        }
+
+        for (int i = 0; i < tilesList.size(); i++) {
+            tiles[i] = tilesList.get(i);
+        }
     }
 }
