@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StatisticAdvertisementManager {
-    private static StatisticAdvertisementManager ourInstance = new StatisticAdvertisementManager();
+    private static com.javarush.task.task27.task2712.ad.StatisticAdvertisementManager ourInstance = new com.javarush.task.task27.task2712.ad.StatisticAdvertisementManager();
     private AdvertisementStorage storage = AdvertisementStorage.getInstance();
 
-    public static StatisticAdvertisementManager getInstance() {
+    public static com.javarush.task.task27.task2712.ad.StatisticAdvertisementManager getInstance() {
         return ourInstance;
     }
 

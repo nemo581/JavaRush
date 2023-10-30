@@ -20,7 +20,7 @@ public enum Dish {
     public static String allDishesToString() {
         String result = "";
 
-        for (Dish dish : Dish.values()) {
+        for (com.javarush.task.task27.task2712.kitchen.Dish dish : com.javarush.task.task27.task2712.kitchen.Dish.values()) {
             if ("".equals(result)) {
                 result += dish.name();
             } else {
