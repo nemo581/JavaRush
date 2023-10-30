@@ -5,11 +5,11 @@ import java.util.List;
 
 public class AdvertisementStorage {
     private static class InstanceHolder {
-        private static final com.javarush.task.task27.task2712.ad.AdvertisementStorage ourInstance = new com.javarush.task.task27.task2712.ad.AdvertisementStorage();
+        private static final AdvertisementStorage ourInstance = new AdvertisementStorage();
     }
 
-    public static com.javarush.task.task27.task2712.ad.AdvertisementStorage getInstance() {
-        return com.javarush.task.task27.task2712.ad.AdvertisementStorage.InstanceHolder.ourInstance;
+    public static AdvertisementStorage getInstance() {
+        return InstanceHolder.ourInstance;
     }
 
     private final List<Advertisement> videos = new LinkedList<>();

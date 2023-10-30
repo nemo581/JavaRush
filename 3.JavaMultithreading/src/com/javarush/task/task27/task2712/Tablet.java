@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 public class Tablet extends Observable {
     private final int number;
-    private static Logger logger = Logger.getLogger(com.javarush.task.task27.task2712.Tablet.class.getName());
+    private static Logger logger = Logger.getLogger(Tablet.class.getName());
     private LinkedBlockingQueue<Order> queue;
 
 
