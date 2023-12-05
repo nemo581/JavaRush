@@ -5,10 +5,10 @@ import java.awt.*;
 public class Tile {
     int value = 0;
 
-    public Tile() {
+    Tile() {
     }
 
-    public Tile(int num) {
+    Tile(int num) {
         value = num;
     }
 
@@ -16,36 +16,39 @@ public class Tile {
         return value == 0;
     }
 
-    public Color getFontColor() {
+    Color getFontColor() {
         return value < 16 ? new Color(0x776e65) : new Color(0xf9f6f2);
     }
 
-    public Color getTileColor() {
-        if (value == 0) {
-            return new Color(0xcdc1b4);
-        } else if (value == 2) {
-            return new Color(0xeee4da);
-        } else if (value == 4) {
-            return new Color(0xede0c8);
-        } else if (value == 8) {
-            return new Color(0xf2b179);
-        } else if (value == 16) {
-            return new Color(0xf59563);
-        } else if (value == 32) {
-            return new Color(0xf67c5f);
-        } else if (value == 64) {
-            return new Color(0xf65e3b);
-        } else if (value == 128) {
-            return new Color(0xedcf72);
-        } else if (value == 256) {
-            return new Color(0xedcc61);
-        } else if (value == 512) {
-            return new Color(0xedc850);
-        } else if (value == 1024) {
-            return new Color(0xedc53f);
-        } else if (value == 2048) {
-            return new Color(0xedc22e);
+    Color getTileColor() {
+        switch (value) {
+            case 0:
+                return new Color(0xcdc1b4);
+            case 2:
+                return new Color(0xeee4da);
+            case 4:
+                return new Color(0xede0c8);
+            case 8:
+                return new Color(0xf2b179);
+            case 16:
+                return new Color(0xf59563);
+            case 32:
+                return new Color(0xf67c5f);
+            case 64:
+                return new Color(0xf65e3b);
+            case 128:
+                return new Color(0xedcf72);
+            case 256:
+                return new Color(0xedcc61);
+            case 512:
+                return new Color(0xedc850);
+            case 1024:
+                return new Color(0xedc53f);
+            case 2048:
+                return new Color(0xedc22e);
+
+            default:
+                return new Color(0xff0000);
         }
-        return new Color(0xff0000);
     }
 }
